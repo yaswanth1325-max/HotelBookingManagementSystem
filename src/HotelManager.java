@@ -1,5 +1,3 @@
-package com.hotelbooking;
-
 import java.util.ArrayList;
 
 public class HotelManager {
@@ -7,15 +5,15 @@ public class HotelManager {
     private ArrayList<Room> rooms = new ArrayList<>();
     private ArrayList<Booking> bookings = new ArrayList<>();
 
-    public void addRoom(int roomNumber) {
-        rooms.add(new Room(roomNumber));
+    public void addRoom(Room room) {
+        rooms.add(room);
     }
 
     public void bookRoom(String customerName, int roomNumber) {
 
-        for(Room room : rooms) {
+        for (Room room : rooms) {
 
-            if(room.getRoomNumber() == roomNumber && !room.isBooked()) {
+            if (room.getRoomNumber() == roomNumber && !room.isBooked()) {
 
                 Customer customer = new Customer(customerName);
                 room.bookRoom();
@@ -30,14 +28,12 @@ public class HotelManager {
 
         System.out.println("Room not available!");
     }
-
     public void showBookings() {
 
-        for(Booking booking : bookings) {
+        for (Booking booking : bookings) {
             System.out.println(
-                    booking.getCustomer().getName()
-                            + " booked Room "
-                            + booking.getRoom().getRoomNumber()
+                    "Customer: " + booking.getCustomer().getName() +
+                            " | Room No: " + booking.getRoom().getRoomNumber()
             );
         }
     }

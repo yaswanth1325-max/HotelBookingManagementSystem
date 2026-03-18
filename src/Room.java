@@ -1,12 +1,16 @@
-package com.hotelbooking;
+public abstract class Room {
 
-public class Room {
+    protected int roomNumber;
+    protected int numberOfBeds;
+    protected int squareFeet;
+    protected double pricePerNight;
+    protected boolean isBooked;
 
-    private int roomNumber;
-    private boolean isBooked;
-
-    public Room(int roomNumber) {
+    public Room(int roomNumber, int numberOfBeds, int squareFeet, double pricePerNight) {
         this.roomNumber = roomNumber;
+        this.numberOfBeds = numberOfBeds;
+        this.squareFeet = squareFeet;
+        this.pricePerNight = pricePerNight;
         this.isBooked = false;
     }
 
@@ -22,7 +26,10 @@ public class Room {
         isBooked = true;
     }
 
-    public void releaseRoom() {
-        isBooked = false;
+    public void displayRoomDetails() {
+        System.out.println("Room No: " + roomNumber);
+        System.out.println("Beds: " + numberOfBeds);
+        System.out.println("Size: " + squareFeet + " sqft");
+        System.out.println("Price per night: " + pricePerNight);
     }
 }

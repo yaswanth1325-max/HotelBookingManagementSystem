@@ -1,4 +1,4 @@
-package com.hotelbooking;
+
 
 public class Customer {
 
