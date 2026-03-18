@@ -1,5 +1,3 @@
-package com.hotelbooking;
-
 public class Booking {
 
     private Customer customer;
